@@ -22,16 +22,17 @@ export default function Home() {
       <Footer />
     </div>
     <script>
-      let gyroscope = new Gyroscope({frequency: 60});
-let elem = document.getElementById("data");
-gyroscope.addEventListener('reading', e => {
-  elem.innerHTML = gyroscope.x + " " + gyroscope.y + " " + gyroscope.z;
-  console.log("Angular velocity along the Y-axis " + gyroscope.y);
-  console.log("Angular velocity along the Z-axis " + gyroscope.z);
-	
+	  let elem = document.getElementById("data");
+navigator.permissions.query({ name: 'geolocation' }).then((result) => {
+ if (result.state === 'granted') {
+   elem.innerHTML = "granted";
+ } else if (result.state === 'prompt') {
+   elem.innerHTML = "prompt";
+ } else if(result.state === 'denied'){
+   elem.innerHTML = "denied";
+}
+ 
 });
-gyroscope.start();
-    }
     </script>
   )
 }
