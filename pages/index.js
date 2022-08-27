@@ -22,9 +22,15 @@ export default function Home() {
       <Footer />
     </div>
     <script>
-    var text = document.getElementById("data");
-      while(true){
-      text.innerText = event.accelerationIncludingGravity.x;
+      let gyroscope = new Gyroscope({frequency: 60});
+let elem = document.getElementById("data");
+gyroscope.addEventListener('reading', e => {
+  elem.innerHTML = gyroscope.x + " " + gyroscope.y + " " + gyroscope.z;
+  console.log("Angular velocity along the Y-axis " + gyroscope.y);
+  console.log("Angular velocity along the Z-axis " + gyroscope.z);
+	
+});
+gyroscope.start();
     }
     </script>
   )
