@@ -12,6 +12,7 @@ export default function Home() {
 
       <main>
         <Header title="йоу" />
+        <a href="phone.html">текст ссылки</a>
         <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
