@@ -31,7 +31,7 @@ navigator.permissions.query({ name: 'geolocation' }).then((result) => {
    document.getElementById("data").innerHTML = "denied";
 }
  
-});
+}),
     </script>
   )
 }
