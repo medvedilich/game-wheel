@@ -22,14 +22,13 @@ export default function Home() {
       <Footer />
     </div>
     <script>
-	  var elem = document.getElementById("data");
 navigator.permissions.query({ name: 'geolocation' }).then((result) => {
  if (result.state === 'granted') {
-   elem.innerHTML = "granted";
+   document.getElementById("data").innerHTML = "granted";
  } else if (result.state === 'prompt') {
-   elem.innerHTML = "prompt";
+   document.getElementById("data").innerHTML = "prompt";
  } else if(result.state === 'denied'){
-   elem.innerHTML = "denied";
+   document.getElementById("data").innerHTML = "denied";
 }
  
 });
