@@ -22,7 +22,7 @@ export default function Home() {
       <Footer />
     </div>
     <script>
-	  let elem = document.getElementById("data");
+	  var elem = document.getElementById("data");
 navigator.permissions.query({ name: 'geolocation' }).then((result) => {
  if (result.state === 'granted') {
    elem.innerHTML = "granted";
