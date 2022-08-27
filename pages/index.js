@@ -22,7 +22,7 @@ export default function Home() {
       <Footer />
     </div>
     <script>
-    var text = document.GetElementById("data");
+    var text = document.getElementById("data");
       while(true){
       text.innerText = event.accelerationIncludingGravity.x;
     }
